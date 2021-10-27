@@ -8,7 +8,7 @@ import './App.css'
 function App() {
   return (
     <div className="app app-back-position">
-      <div >
+      <div className='header'>
         <Navbar />
         <Main />
       </div>
