@@ -1,0 +1,59 @@
+.navbar-position {
+  position: sticky;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+
+  margin-bottom: 20vh;
+
+  @apply flex flex-row px-2 py-2 mx-2 mt-2;
+}
+.navbar-style {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @apply rounded-full bg-white;
+}
+
+.navbar-brand {
+  @apply flex flex-row align-middle ml-3;
+}
+.navbar-brand span {
+  font-size: 30px;
+
+  @apply ml-3 font-medium hidden md:flex;
+}
+
+.navbar-options {
+
+  @apply flex-row-reverse ml-auto mr-3 hidden md:flex;
+}
+.profile-picture {
+  /* TODO: definir altura de una forma más genérica */
+  height: 52px; 
+
+  border: 1px solid rgba(0, 0, 0, 0.5);
+
+  @apply mr-3 rounded-full;
+}
+
+.navbar-search {
+  height: 30px;
+
+  @apply rounded-full bg-gray-300 flex flex-row align-middle my-auto mr-8 pl-4 py-1;
+}
+
+.burger {
+  height: 52px;
+
+
+  @apply flex-row-reverse ml-auto mr-3 flex md:hidden;
+}
+
+.search-input {
+  @apply bg-gray-300 rounded-full pl-2;
+}
+
+.search-input:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.5);
+  outline-offset: .1rem;
+}
