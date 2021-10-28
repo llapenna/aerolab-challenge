@@ -1,0 +1,18 @@
+.store-item {
+  text-align: center;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 70%);
+
+  @apply rounded-2xl bg-white m-5 px-8 py-5 flex flex-col;
+}
+
+.redeem-button {
+  transition: all .5s;
+  background-color: #799be3;
+
+  @apply rounded-full py-2 px-10 mt-5;
+}
+.redeem-button:hover {
+  background-color: #2c4e97;
+  transform: scale(1.15);
+  @apply rounded-full py-2 px-10 mt-5 text-white bg-blue-800;
+}
