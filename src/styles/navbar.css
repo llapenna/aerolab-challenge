@@ -4,6 +4,8 @@
   right: 20px;
   top: 20px;
 
+  z-index: 5;
+
   margin-bottom: 20vh;
 
   @apply flex flex-row px-2 py-2 mx-2 mt-2;

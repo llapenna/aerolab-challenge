@@ -24,10 +24,10 @@ const ProfilePicture = () => {
   const [visible, setVisible] = useState(false)
 
   const buttons = [
-    { id:0, text: 'My Products' },
-    // TODO: cambiar placeholder
-    { id:1, text: '5000+' },
-    { id:2, text: 'About' }
+    // TODO: improve placeholders
+    { id:0, text: 'My Products', router: true, link: '/' },
+    { id:1, text: '5000+', router: true, link: '/test' },
+    { id:2, text: 'About', link: 'https://github.com/lucianoglapenna/aerolab-challenge' }
   ]
 
   return (
@@ -35,6 +35,7 @@ const ProfilePicture = () => {
       <img
         className='profile-picture'
         onClick={() => setVisible(!visible)}
+        // placeholder picture
         src='https://gravatar.com/avatar/02da3654c817d754ada86ad4f16d1761?d=identicon'
         alt='profile'
       />
