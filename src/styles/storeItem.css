@@ -14,5 +14,6 @@
 .redeem-button:hover {
   background-color: #2c4e97;
   transform: scale(1.15);
+  
   @apply rounded-full py-2 px-10 mt-5 text-white bg-blue-800;
 }

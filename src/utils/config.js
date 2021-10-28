@@ -1,7 +1,4 @@
-import dotenv from 'dotenv'
-dotenv()
-
-const TOKEN = process.env.TOKEN
+const TOKEN = process.env.REACT_APP_TOKEN
 
 const config = {
   TOKEN,

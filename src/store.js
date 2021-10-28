@@ -8,8 +8,12 @@ import thunk from 'redux-thunk'
 
 // reducers
 import filterReducer from './reducers/filterReducer'
+import userReducer from './reducers/userReducer'
+import productsReducer from './reducers/productsReducer'
 
 const reducer = combineReducers({
+  user: userReducer,
+  products: productsReducer,
   filter: filterReducer,
 })
 

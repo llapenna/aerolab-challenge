@@ -1,0 +1,46 @@
+/* STORE */
+.store {
+
+  background: url('../icons/circle-scatter.svg'), #002233;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @apply flex flex-col mt-10;
+}
+
+/* ------------------------------------ */
+
+/* CATEGORY SELECTION */
+
+.category-option {
+  /* changes the svg to an appropiate color */
+  filter: brightness(0) saturate(100%) invert(34%) sepia(53%) saturate(1180%) hue-rotate(192deg) brightness(104%) contrast(91%);
+  @apply px-2 py-2 mx-2;
+}
+
+.category-option-hover:hover {
+  transition: background-color .5s;
+  background-color: rgba(255,255,255, 0.15);
+
+  @apply rounded-lg;
+}
+
+.category-option-selected {
+  background-color: rgba(255, 255, 255, 0.5);
+
+  @apply rounded-lg;
+}
+
+/* -------------------------------- */
+
+/* SORT BY */
+.sort-option {
+
+  
+  @apply p-2;
+}
+.sort-option:hover {
+  transition: background-color .5s;
+
+  @apply bg-indigo-600;
+}

@@ -1,4 +1,6 @@
 // core
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,8 +17,20 @@ import UserProfile from './components/UserProfile'
 // styles
 import './App.css'
 
+// redux actions
+import { setUser } from './reducers/userReducer'
+import { setProducts } from './reducers/productsReducer'
+
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    // we load all the available products and the user information
+    dispatch(setUser())
+    dispatch(setProducts())
+  }, [dispatch])
 
   return (
     <div className="app app-back-position">
