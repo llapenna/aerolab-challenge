@@ -35,7 +35,7 @@ const PageSelector = () => {
 }
 
 const Products = () => {
-  const { value, order } = useSelector(store => store.filter)
+  const { value, order, categories } = useSelector(store => store.filter)
   const products = useSelector(store => {
 
     let modifiedArray
@@ -43,6 +43,10 @@ const Products = () => {
     value
       ? modifiedArray = store.products.filter(p => p.name.toLowerCase().includes(value.toLowerCase()))
       : modifiedArray = store.products
+
+    if (categories.length > 0) {
+      modifiedArray = modifiedArray.filter(a => categories.indexOf(a.category) !== -1)
+    }
 
     if (order === 'ASC')
       modifiedArray.sort((a, b) => a.cost - b.cost)

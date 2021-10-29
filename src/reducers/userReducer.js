@@ -11,15 +11,18 @@ const initial = {
 
 // action types
 const SET = 'user/SET'
-const INCREMENT_POINTS = 'user/INCREMENT_POINTS'
+const SET_POINTS = 'user/INCREMENT_POINTS'
+const DECREMENT_POINTS = 'user/DECREMENT_POINTS'
 
 // reducer
 const reducer = (state = initial, action) => {
   switch (action.type) {
     case SET:
       return action.data
-    case INCREMENT_POINTS:
+    case SET_POINTS:
       return { ...state, points: action.data }
+    case DECREMENT_POINTS:
+      return { ...state, points: state.points - action.data }
     default:
       return state
   }
@@ -42,9 +45,16 @@ export const addPoints = points => {
     const newPoints = await userService.addPoints(points)
 
     dispatch({
-      type: INCREMENT_POINTS,
+      type: SET_POINTS,
       data: newPoints
     })
+  }
+}
+
+export const decrementPoints = points => {
+  return {
+    type: DECREMENT_POINTS,
+    data: points
   }
 }
 

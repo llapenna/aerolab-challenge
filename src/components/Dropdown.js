@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom'
 import '../styles/dropdown.css'
 
 const DropdownOption = ({ text, link, router = false }) => {
-
-  console.log('Text&Link', text, link)
   return (
     router
       ? <Link to={link} className='dropdown-option'>{text}</Link>
