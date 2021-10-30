@@ -1,3 +1,4 @@
+/* NAVBAR */
 .navbar-position {
   position: sticky;
   left: 20px;
@@ -16,6 +17,10 @@
   @apply rounded-full bg-white;
 }
 
+
+/* ---------------------------------- */
+
+/* BRAND */
 .navbar-brand {
   @apply flex flex-row align-middle ml-3;
 }
@@ -25,9 +30,12 @@
   @apply ml-3 font-medium hidden md:flex;
 }
 
+/* ---------------------------------- */
+
+/* OPTIONS */
 .navbar-options {
 
-  @apply flex-row-reverse ml-auto mr-3 hidden md:flex;
+  @apply flex-row mr-3 hidden md:flex;
 }
 .profile-picture {
   /* TODO: definir altura de una forma más genérica */
@@ -41,14 +49,7 @@
 .navbar-search {
   height: 30px;
 
-  @apply rounded-full bg-gray-300 flex flex-row align-middle my-auto mr-8 pl-4 py-1;
-}
-
-.burger {
-  height: 52px;
-
-
-  @apply flex-row-reverse ml-auto mr-3 flex md:hidden;
+  @apply rounded-full bg-gray-300 flex flex-row align-middle my-auto pl-4 py-1 mr-4;
 }
 
 .search-input {
@@ -58,4 +59,55 @@
 .search-input:focus {
   outline: 2px solid rgba(0, 0, 0, 0.5);
   outline-offset: .1rem;
+}
+
+/* ---------------------------------- */
+
+/* BURGER */
+.burger {
+  height: 52px;
+
+
+  @apply flex-row-reverse ml-auto mr-3 flex md:hidden;
+}
+
+/* ---------------------------------- */
+
+/* POINTS */
+
+.points {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  
+  @apply mx-4 my-auto text-xl md:text-2xl rounded-full p-2 flex flex-row;
+}
+.points:hover {
+  transition: border .2s linear;
+
+  @apply border-b-4;
+}
+
+/* ---------------------------------- */
+
+/* ADD POINTS */
+.add-points-container{
+
+  background: url('../icons/low-poly-grid.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  @apply absolute right-0 w-60 py-2 bg-white rounded-md shadow-xl mt-4 flex flex-row;
+}
+
+.add-points-button {
+  @apply bg-white rounded-full mx-auto px-2 border-b-2;
+}
+.add-points-button:hover {
+  transition: all 1s linear;
+  outline: 1px solid black;
+}
+
+
+/* NAVBAR RESPONSIVE DROPDOWN */
+.navbar-responsive-options {
+  @apply bg-white text-2xl absolute top-0 left-0 mt-20 px-4 w-full rounded-lg divide-y flex flex-col;
 }

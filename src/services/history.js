@@ -8,7 +8,7 @@ const baseUrl = 'https://coding-challenge-api.aerolab.co'
 const authorization = { headers: { 'authorization' : `${config.TOKEN}` } }
 
 const getAll = async () => {
-  const res = axios.get(`${baseUrl}/history/`, authorization)
+  const res = await axios.get(`${baseUrl}/user/history/`, authorization)
 
   return res.data
 }
