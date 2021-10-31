@@ -7,10 +7,17 @@ import Icon from './Icon'
 // reducers
 import { addCategory, removeCategory } from '../reducers/filterReducer'
 
-// icons
-import phones from '../icons/mobile.svg'
-import laptop from '../icons/laptop.svg'
-import joystick from '../icons/joystick.svg'
+// assets
+import phones from '../assets/mobile.svg'
+import laptop from '../assets/laptop.svg'
+import joystick from '../assets/joystick.svg'
+import camera from '../assets/camera.svg'
+import audio from '../assets/audio.svg'
+import monitor from '../assets/monitor.svg'
+import drone from '../assets/drone.svg'
+import smartwatch from '../assets/smartwatch.svg'
+import tablet from '../assets/tablet.svg'
+import smartHome from '../assets/smart-home.svg'
 
 const Category = ({ category, selected }) => {
 
@@ -34,21 +41,19 @@ const Category = ({ category, selected }) => {
 }
 const Categories = () => {
 
-  // eslint-disable-next-line no-unused-vars
   const selectedCategories = useSelector(store => store.filter.categories)
 
-  // eslint-disable-next-line no-unused-vars
   const categories = [
     { id: 0, name: 'Phones', icon: phones },
     { id: 1, name: 'Gaming', icon: joystick },
     { id: 2, name: 'Laptops', icon: laptop },
-    { id: 3, name: 'Cameras', icon: phones },
-    { id: 4, name: 'Audio', icon: phones },
-    { id: 5, name: 'Monitors & TV', icon: phones },
-    { id: 6, name: 'Drones', icon: phones },
-    { id: 7, name: 'Phone Accessories', icon: phones },
-    { id: 8, name: 'Smart Home', icon: phones },
-    { id: 9, name: 'Tablets & E-readers', icon: phones },
+    { id: 3, name: 'Cameras', icon: camera },
+    { id: 4, name: 'Audio', icon: audio },
+    { id: 5, name: 'Monitors & TV', icon: monitor },
+    { id: 6, name: 'Drones', icon: drone },
+    { id: 7, name: 'Phone Accessories', icon: smartwatch },
+    { id: 8, name: 'Smart Home', icon: smartHome },
+    { id: 9, name: 'Tablets & E-readers', icon: tablet },
   ]
 
   const isSelected = categoryName => {
