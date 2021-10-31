@@ -1,8 +1,8 @@
 // core
 import { useDispatch, useSelector } from 'react-redux'
 
-//icons
-import coin from '../icons/coin.svg'
+// assets
+import coin from '../assets/coin.svg'
 
 // components
 import Icon from './Icon'
@@ -15,6 +15,7 @@ import historyService from '../services/history'
 
 // action redux
 import { decrementPoints } from '../reducers/userReducer'
+import { setSuccess, setError } from '../reducers/notificationReducer'
 
 
 const ItemImage = ({ image }) => {
@@ -62,8 +63,13 @@ const StoreItem = ({ product }) => {
   const dispatch = useDispatch()
 
   const handleRedeem = async () => {
-    await historyService.redeem(product._id)
-    dispatch(decrementPoints(product.cost))
+    try {
+      await historyService.redeem(product._id)
+      dispatch(decrementPoints(product.cost))
+      dispatch(setSuccess(`${product.name} redeemed! Enjoy it ;)`))
+    } catch(e) {
+      dispatch(setError('An unknown error has ocurred!'))
+    }
   }
 
   return (

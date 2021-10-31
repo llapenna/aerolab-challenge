@@ -11,8 +11,9 @@ import {
 import Navbar from './components/Navbar'
 import Featured from './components/Featured'
 import Store from './components/Store'
-import Footer from './components/Footer'
 import UserProfile from './components/UserProfile'
+
+import Notification from './components/Notification'
 
 // styles
 import './App.css'
@@ -53,7 +54,7 @@ function App() {
 
         </Switch>
       </Router>
-      <Footer />
+      <Notification/>
     </div>
   )
 }

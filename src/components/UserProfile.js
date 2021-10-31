@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
-// icons
-import coin from '../icons/coin.svg'
+// assets
+import coin from '../assets/coin.svg'
 
 // services
 import historyService from '../services/history'

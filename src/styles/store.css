@@ -1,7 +1,7 @@
 /* STORE */
 .store {
 
-  background: url('../icons/circle-scatter.svg'), #002233;
+  background: url('../assets/circle-scatter.svg'), #002233;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -33,7 +33,7 @@
 
 /* -------------------------------- */
 
-/* SORT BY */
+/* SORT BY & PAGE */
 .sort-option {
 
   

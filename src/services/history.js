@@ -14,7 +14,7 @@ const getAll = async () => {
 }
 
 const redeem = async productId => {
-  const res = axios.post(`${baseUrl}/redeem/`, { productId }, authorization)
+  const res = await axios.post(`${baseUrl}/redeem/`, { productId }, authorization)
 
   return res.data
 }

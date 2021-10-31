@@ -41,7 +41,7 @@ const Items = () => {
   else
     return null
 }
-// TODO: Implementar carousel
+
 const Featured = () => {
 
   const filter = useSelector(store => store.filter.value)

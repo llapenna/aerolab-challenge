@@ -1,16 +1,16 @@
 .app {
   margin-top: -0.5rem;
-  background: url('./icons/wave.svg'), #002233;
+  background: url('./assets/wave.svg'), #002233;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .app-back-position {
-  background-position: 20% -25vh;
+  background-position: 20% -180vh;
 }
 
 @media (min-width: 768px){
   .app-back-position {
-    background-position: 100% -70px;
+    background-position: 70% -70vh;
   }
 }

@@ -10,11 +10,13 @@ import thunk from 'redux-thunk'
 import filterReducer from './reducers/filterReducer'
 import userReducer from './reducers/userReducer'
 import productsReducer from './reducers/productsReducer'
+import notificationReducer from './reducers/notificationReducer'
 
 const reducer = combineReducers({
   user: userReducer,
   products: productsReducer,
   filter: filterReducer,
+  notification: notificationReducer
 })
 
 const store = createStore(reducer, composeWithDevTools(

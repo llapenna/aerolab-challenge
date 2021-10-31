@@ -1,9 +1,16 @@
+// core
 import { useDispatch, useSelector } from 'react-redux'
-import { setOrderASC, setOrderDESC } from '../reducers/filterReducer'
+
+// actions / selectors
+import { setOrderASC, setOrderDESC, filterProducts } from '../reducers/filterReducer'
+
+// components
 import StoreItem from './StoreItem'
+import PageSelector from './PageSelector'
 
 // styles
 import '../styles/store.css'
+
 
 const SortBy = ({ handleSortASC, handleSortDESC }) => {
   return (
@@ -25,36 +32,11 @@ const List = ({ products }) => {
   )
 }
 
-// TODO: Implementar
-const PageSelector = () => {
-  return (
-    <div>
 
-    </div>
-  )
-}
 
 const Products = () => {
-  const { value, order, categories } = useSelector(store => store.filter)
-  const products = useSelector(store => {
-
-    let modifiedArray
-
-    value
-      ? modifiedArray = store.products.filter(p => p.name.toLowerCase().includes(value.toLowerCase()))
-      : modifiedArray = store.products
-
-    if (categories.length > 0) {
-      modifiedArray = modifiedArray.filter(a => categories.indexOf(a.category) !== -1)
-    }
-
-    if (order === 'ASC')
-      modifiedArray.sort((a, b) => a.cost - b.cost)
-    if (order === 'DESC')
-      modifiedArray.sort((a, b) => b.cost - a.cost)
-
-    return modifiedArray
-  })
+  // filtering the product list
+  const products = useSelector(filterProducts)
 
   const dispatch = useDispatch()
 
@@ -68,6 +50,7 @@ const Products = () => {
   return (
     <div className='mt-5 flex flex-col'>
       <SortBy handleSortASC={handleSortASC} handleSortDESC={handleSortDESC} />
+      <PageSelector />
       <List products={products}/>
       <PageSelector />
     </div>

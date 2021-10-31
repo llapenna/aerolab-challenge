@@ -38,7 +38,6 @@
   @apply flex-row mr-3 hidden md:flex;
 }
 .profile-picture {
-  /* TODO: definir altura de una forma más genérica */
   height: 52px; 
 
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -91,7 +90,7 @@
 /* ADD POINTS */
 .add-points-container{
 
-  background: url('../icons/low-poly-grid.svg');
+  background: url('../assets/low-poly-grid.svg');
   background-repeat: no-repeat;
   background-size: 100%;
 

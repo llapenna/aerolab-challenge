@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 // icons
-import burger from '../icons/burger.svg'
-import search from '../icons/search.svg'
-import logo from '../icons/logo.svg'
-import coin from '../icons/coin.svg'
+import burger from '../assets/burger.svg'
+import search from '../assets/search.svg'
+import logo from '../assets/logo.svg'
+import coin from '../assets/coin.svg'
 
 // components
 import Icon from './Icon'
