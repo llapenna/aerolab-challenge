@@ -21,8 +21,7 @@ const CLEAR = 'filter/CLEAR'
 
 // selectors
 export const filterProducts = store => {
-  const itemsPerPage = 12
-  const { value, order, categories, page } = store.filter
+  const { value, order, categories, page, itemsPerPage } = store.filter
 
   let modifiedArray
 
@@ -128,7 +127,19 @@ export const nextPage = () => {
     const nextPage = getState().filter.page + 1
     const itemsPerPage = getState().filter.itemsPerPage
 
-    if (getState().products.slice(nextPage * itemsPerPage, (nextPage + 1) * itemsPerPage).length > 0)
+    // we create a copy to avoid mutability
+    let products = [ ...getState().products ]
+    const { value, categories } = getState().filter
+
+    // we filter the values
+    if (value !== '')
+      products = products.filter(p => p.name.toLowerCase().includes(value.toLowerCase()))
+    if (categories.length > 0) {
+      products = products.filter(a => categories.indexOf(a.category) !== -1)
+    }
+
+    // and check if we have enough items for another page
+    if (products.slice(nextPage * itemsPerPage, (nextPage + 1) * itemsPerPage).length > 0)
       return dispatch({
         type: NEXT_PAGE
       })
@@ -136,6 +147,7 @@ export const nextPage = () => {
 }
 export const previousPage = () => {
   return (dispatch, getState) => {
+    // prevents negative values
     if (getState().filter.page !== 0){
       dispatch({
         type: PREV_PAGE

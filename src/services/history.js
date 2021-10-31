@@ -10,7 +10,10 @@ const authorization = { headers: { 'authorization' : `${config.TOKEN}` } }
 const getAll = async () => {
   const res = await axios.get(`${baseUrl}/user/history/`, authorization)
 
-  return res.data
+  // we return the data already sorted
+  const sortedHistory = res.data.sort((a,b) => new Date(b.createDate) - new Date(a.createDate))
+
+  return sortedHistory
 }
 
 const redeem = async productId => {
