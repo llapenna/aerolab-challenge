@@ -71,7 +71,7 @@ const ProfilePicture = () => {
         className='profile-picture'
         onClick={() => setVisible(!visible)}
         // placeholder picture
-        src='https://gravatar.com/avatar/02da3654c817d754ada86ad4f16d1761?d=identicon'
+        src='https://avatars.githubusercontent.com/u/43729859?v=4'
         alt='profile'
       />
       { visible && <Dropdown options={buttons} className='mt-5'/> }
